@@ -2,3 +2,4 @@
 .idea*
 .Rbuildignore
 .Rhistory
+.Rproj.user

@@ -2,10 +2,10 @@
 \alias{SecretsProvider}
 \docType{package}
 \title{
-SecretsProvider
+Save and retrieve name-value pairs to and from a file
 }
 \description{
-Saves and retrieves secrets stored in a file.
+Saves and retrieves secrets stored in a file. The secrets are not encrypted in the file. Manually add the file to gitignore.
 }
 \details{
         Args:
@@ -30,11 +30,12 @@ Saves and retrieves secrets stored in a file.
 \author{
 LifeWatch ERIC
 
-Maintainer: LifeWatch VLIC
+Maintainer: LifeWatch ERIC VLIC
 }
 \examples{
 # Create a SecretsProvider object
-secretsProvider <- SecretsProvider(secret_file_path = ".env")
+secretsProvider <- SecretsProvider(secret_file_path = ".env", 
+                    input_func = function(prompt) { "mock_input"})
 
 # Set a secret
 secretsProvider$set_secret("Data_source_API_key")

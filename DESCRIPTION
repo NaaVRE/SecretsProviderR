@@ -1,11 +1,15 @@
 Package: SecretsProvider
 Type: Package
-Title: SecretsProvider
+Title: Save and retrieve name-value pairs to and from a file
 Version: 1.0
 Date: 2025-03-07
-Author: LifeWatrch ERIC
-Maintainer: <vlic@lifewatch.eu>
+Authors@R: c(person("Koen", "Greuell", role = c("aut", "cre"),
+                     email = "Koen.Greuell@LifeWatch.eu"))
+Maintainer: LifeWatch ERIC VLIC <vlic@lifewatch.eu>
 Description: Saves and retrieves secrets stored in a file.
 License: Apache License (== 2.0)
-Suggests: testthat, getPass
+Suggests: 
+    testthat (>= 3.0.0),
+    getPass
 RoxygenNote: 7.3.2
+Config/testthat/edition: 3
