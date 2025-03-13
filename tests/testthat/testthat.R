@@ -116,3 +116,20 @@ test_that("test_remove_last_secret", {
 
   unlink(test_env_path)
 })
+
+test_that("test_get_secret_does_not_overwrite_previous_value", {
+  secret1_name <- "secret1"
+  secret_value <- "secret_original_value"
+  secret_new_value <- "secret_value_new_input_func"
+  
+  mock_input <- mock_input_factory(secret_value)
+  secrets_provider <- SecretsProvider(input_func = mock_input, secret_file_path = test_env_path)
+  secrets_provider$get_secret(secret1_name)
+  
+  secrets_provider$input_func = mock_input_factory(secret_new_value)
+  secrets_provider$get_secret(secret1_name)
+  
+  expect_equal(secret_value, secrets_provider$read_file_to_dict()[[secret1_name]])
+  
+  unlink(test_env_path)
+})
