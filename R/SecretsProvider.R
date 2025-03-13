@@ -1,4 +1,4 @@
-SecretsProvider <- function(secret_file_path = ".env", input_func = getPass::getPass) {
+SecretsProvider <- function(input_func = getPass::getPass, secret_file_path = ".env") {
   self <- list()
 
   self$secret_file_path <- secret_file_path
@@ -23,11 +23,8 @@ SecretsProvider <- function(secret_file_path = ".env", input_func = getPass::get
   }
 
   self$read_file_to_dict <- function() {
-    # Read the lines from the file
     lines <- readLines(self$secret_file_path)
-    # Initialize an empty named list (dictionary)
     result_dict <- list()
-    # Process each line
     for (line in lines) {
       line <- trimws(line)
       if (nchar(line) == 0) next

@@ -8,7 +8,7 @@ Save and retrieve name-value pairs to and from a file
 Saves and retrieves secrets stored in a file. The secrets are not encrypted in the file. Manually add the file to gitignore.
 }
 \details{
-        Args:
+        Arguments:
             
             secret_file_path Path to the file where secrets are stored. Defaults to ".env".
             

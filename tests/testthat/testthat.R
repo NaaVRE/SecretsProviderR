@@ -1,4 +1,4 @@
-source("~/SecretsProviderR/R/SecretsProvider.R")
+source("../../R/SecretsProvider.R")
 
 library(testthat)
 
