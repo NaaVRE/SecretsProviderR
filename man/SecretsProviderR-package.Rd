@@ -31,9 +31,9 @@ The secrets can also be used by Python package SecretsProvider.
             Remove a secret
 }
 \author{
-LifeWatch ERIC
+Koen Greuell
 
-Maintainer: LifeWatch ERIC VLIC
+Maintainer: Koen Greuell
 }
 \examples{
 # Create a SecretsProvider object

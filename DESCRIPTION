@@ -4,7 +4,7 @@ Title: Save and Retrieve Name-Value Pairs to and from a File
 Version: 1.0
 Date: 2025-03-07
 Authors@R: c(person("Koen", "Greuell", role = c("aut", "cre"), email = "vlic@lifewatch.eu"))
-Maintainer: LifeWatch ERIC VLIC <vlic@lifewatch.eu>
+Maintainer: Koen Greuell <vlic@lifewatch.eu>
 Description: Saves and retrieves secrets stored in a file.
 License: Apache License (== 2.0)
 Suggests: 
