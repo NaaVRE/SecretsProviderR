@@ -1,7 +1,7 @@
 Package: SecretsProvider
 Type: Package
 Title: Save and Retrieve Name-Value Pairs to and from a File
-Version: 1.0
+Version: 1.0.0
 Date: 2025-03-07
 Authors@R: c(person("Koen", "Greuell", role = c("aut", "cre"), email = "vlic@lifewatch.eu"))
 Maintainer: Koen Greuell <vlic@lifewatch.eu>
