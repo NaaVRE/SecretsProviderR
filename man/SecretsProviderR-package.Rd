@@ -37,7 +37,7 @@ Maintainer: LifeWatch ERIC VLIC
 }
 \examples{
 # Create a SecretsProvider object
-secretsProvider <- SecretsProvider(secret_file_path = ".env", 
+secretsProvider <- SecretsProvider(secret_file_path = tempfile(), 
                     input_func = function(prompt) { "mock_input"})
 
 # Set a secret

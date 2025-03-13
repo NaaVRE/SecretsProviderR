@@ -1,12 +1,8 @@
 ## R CMD check results
+Duration: 6.5s
 
-0 errors | 0 warnings | 2 notes
+0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
-❯ checking for future file timestamps ... NOTE
-  unable to verify current time
-
-❯ checking for non-standard things in the check directory ... NOTE
-  Found the following files/directories:
-    ‘.env’
+R CMD check succeeded
 
 * This is a new release.
