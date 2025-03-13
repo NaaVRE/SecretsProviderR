@@ -4,24 +4,6 @@ SecretsProvider <- function(input_func = getPass::getPass, secret_file_path = ".
   self$secret_file_path <- secret_file_path
   self$get_input <- input_func
 
-  self$ensure_file_exists <- function() {
-    if (!file.exists(self$secret_file_path)) {
-      file.create(self$secret_file_path)
-    }
-  }
-
-  self$ensure_file_exists()
-
-  self$set_secret <- function(secret_name) {
-    current_secret_value <- self$get_secret(secret_name)
-    if (!is.null(current_secret_value)) {
-      cat(paste0("\nThere is already a secret named ", secret_name, " stored as ",
-                 secret_name, ". Entering a new value will overwrite the existing secret.\n"))
-    }
-    new_secret_value <- self$request_secret_value()
-    self$store_secret(secret_name, new_secret_value)
-  }
-
   self$read_file_to_dict <- function() {
     lines <- readLines(self$secret_file_path)
     result_dict <- list()
@@ -38,23 +20,46 @@ SecretsProvider <- function(input_func = getPass::getPass, secret_file_path = ".
     result_dict
   }
 
-  self$get_secret <- function(secret_name) {
-    if (file.info(self$secret_file_path)$size == 0) {
+  self$retrieve_secret <- function(secret_name) {
+    if (file.exists(self$secret_file_path)) {
       secret_dict <- self$read_file_to_dict()
-      secret_value <- secret_dict$secret_name
+      secret_value <- secret_dict[[secret_name]]
     } else {
+      file.create(self$secret_file_path)
       secret_value <- NULL
     }
+    secret_value
+  }
+
+  self$set_secret <- function(secret_name) {
+    current_secret_value <- self$retrieve_secret(secret_name)
+    prompt <- "Enter your Secret"
+    if (!is.null(current_secret_value)) {
+      prompt <- paste0("There is already a secret named ",
+                       secret_name,
+                       ". Entering a new value will overwrite the existing secret. ",
+                       prompt)
+    }
+    new_secret_value <- self$request_secret_value(prompt)
+    self$store_secret(secret_name, new_secret_value)
+  }
+
+  self$get_secret <- function(secret_name) {
+    secret_value <- self$retrieve_secret(secret_name)
     if (is.null(secret_value)) {
-      cat(paste0("\nA secret with name ", secret_name, " is not yet stored in ", self$secret_file_path, ".\n"))
-      secret_value <- self$request_secret_value()
+      prompt <- paste0("A secret with name ",
+                       secret_name,
+                       " is not yet stored in the file ",
+                       self$secret_file_path,
+                       ". Enter your Secret")
+      secret_value <- self$request_secret_value(prompt)
       self$store_secret(secret_name, secret_value)
     }
     secret_value
   }
 
-  self$request_secret_value <- function() {
-    self$get_input("Enter your Secret: ")
+  self$request_secret_value <- function(prompt) {
+    self$get_input(paste0(prompt, ": "))
   }
 
   self$store_secret <- function(secret_name, secret_value) {
