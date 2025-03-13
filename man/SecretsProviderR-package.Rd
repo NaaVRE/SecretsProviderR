@@ -2,10 +2,13 @@
 \alias{SecretsProvider}
 \docType{package}
 \title{
-Save and retrieve name-value pairs to and from a file
+Save and Retrieve Name-Value Pairs to and from a File
 }
 \description{
-Saves and retrieves secrets stored in a file. The secrets are not encrypted in the file. Manually add the file to gitignore.
+Saves and retrieves secrets stored in a file. 
+The secrets are not encrypted in the file. 
+Manually add the file to gitignore.
+The secrets can also be used by Python package SecretsProvider. 
 }
 \details{
         Arguments:

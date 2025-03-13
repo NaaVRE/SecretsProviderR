@@ -1,10 +1,9 @@
 Package: SecretsProvider
 Type: Package
-Title: Save and retrieve name-value pairs to and from a file
+Title: Save and Retrieve Name-Value Pairs to and from a File
 Version: 1.0
 Date: 2025-03-07
-Authors@R: c(person("Koen", "Greuell", role = c("aut", "cre"),
-                     email = "Koen.Greuell@LifeWatch.eu"))
+Authors@R: c(person("Koen", "Greuell", role = c("aut", "cre"), email = "vlic@lifewatch.eu"))
 Maintainer: LifeWatch ERIC VLIC <vlic@lifewatch.eu>
 Description: Saves and retrieves secrets stored in a file.
 License: Apache License (== 2.0)
