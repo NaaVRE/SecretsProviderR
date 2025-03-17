@@ -1,0 +1,8 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+Win_builder_output/*
+^cran-comments\.md$
+^revdep$
+^.github$
+^CRAN-SUBMISSION$
+^SecretsProviderR.Rproj$
