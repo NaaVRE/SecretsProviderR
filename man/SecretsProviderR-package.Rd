@@ -5,12 +5,10 @@
 Save and Retrieve Name-Value Pairs to and from a File
 }
 \description{
-This package provides a straightforward method for managing secrets. 
-It enables users to store secrets in a designated file, 
-ensuring they are not directly embedded in shared code. 
-While it prioritizes ease of use, please note that secrets are stored without encryption.
-For secrets used both R and Python, 
-this package is compatible with the 'SecretsProvider' Python package <https://pypi.org/project/SecretsProvider/>.
+Facilitates secret management by storing credentials in a dedicated file, 
+          keeping them out of your code base. 
+          The secrets are stored without encryption.  
+          This package is compatible with secrets stored by the 'SecretsProvider' Python package <https://pypi.org/project/SecretsProvider/>.
 }
 \details{
         Arguments:
