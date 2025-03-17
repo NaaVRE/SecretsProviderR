@@ -5,10 +5,12 @@
 Save and Retrieve Name-Value Pairs to and from a File
 }
 \description{
-Saves and retrieves secrets stored in a file. 
-The secrets are not encrypted in the file. 
-Manually add the file to gitignore.
-The secrets can also be used by Python package SecretsProvider. 
+This package provides a straightforward method for managing secrets. 
+It enables users to store secrets in a designated file, 
+ensuring they are not directly embedded in shared code. 
+While it prioritizes ease of use, please note that secrets are stored without encryption.
+For secrets used both R and Python, 
+this package is compatible with the 'SecretsProvider' Python package <https://pypi.org/project/SecretsProvider/>.
 }
 \details{
         Arguments:
