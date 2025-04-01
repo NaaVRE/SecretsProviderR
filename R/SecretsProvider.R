@@ -33,7 +33,7 @@ SecretsProvider <- function(input_func = getPass::getPass, secret_file_path = ".
 
   self$remove_secret <- function(secret_name) {
     self$insert_key_value_into_file(secret_name, NULL)
-    cat(paste0("\nSecret ", secret_name, " has been removed.\n"))
+    message(paste0("\nSecret ", secret_name, " has been removed.\n"))
   }
 
   self$read_file_to_dict <- function() {
@@ -70,9 +70,9 @@ SecretsProvider <- function(input_func = getPass::getPass, secret_file_path = ".
   self$store_secret <- function(secret_name, secret_value) {
     if (nchar(trimws(secret_value)) > 0) {
       self$insert_key_value_into_file(secret_name, secret_value)
-      cat(paste0("\nSecret has been stored: ", secret_name, ".\n"))
+      message(paste0("\nSecret has been stored: ", secret_name, ".\n"))
     } else {
-      cat("\nNo value entered for the secret. Not storing.\n")
+      message("\nNo value entered for the secret. Not storing.\n")
     }
   }
 

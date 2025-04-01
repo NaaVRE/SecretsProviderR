@@ -8,7 +8,7 @@ Save and Retrieve Name-Value Pairs to and from a File
 Facilitates secret management by storing credentials in a dedicated file, 
           keeping them out of your code base. 
           The secrets are stored without encryption.  
-          This package is compatible with secrets stored by the 'SecretsProvider' Python package <https://pypi.org/project/SecretsProvider/>.
+          This package is compatible with secrets stored by the 'SecretsProvider' 'Python' package <https://pypi.org/project/SecretsProvider/>.
 }
 \details{
         Arguments:
