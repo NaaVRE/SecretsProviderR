@@ -20,7 +20,7 @@ SecretsProvider <- function(input_func = getPass::getPass, secret_file_path = ".
 
   self$set_secret <- function(secret_name) {
     current_secret_value <- self$retrieve_secret(secret_name)
-    prompt <- "Enter your Secret"
+    prompt <- paste0("Enter your secret '", secret_name, "'")
     if (!is.null(current_secret_value)) {
       prompt <- paste0("There is already a secret named ",
                        secret_name,
