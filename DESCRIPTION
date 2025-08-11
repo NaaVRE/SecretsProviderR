@@ -10,8 +10,9 @@ Description: Facilitates secret management by storing credentials in a dedicated
           The secrets are stored without encryption.  
           This package is compatible with secrets stored by the 'SecretsProvider' 'Python' package <https://pypi.org/project/SecretsProvider/>.
 License: Apache License (== 2.0)
-Suggests: 
-    testthat (>= 3.0.0),
+Imports:
     getPass
+Suggests: 
+    testthat (>= 3.0.0)
 RoxygenNote: 7.3.2
 Config/testthat/edition: 3
