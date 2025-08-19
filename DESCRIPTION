@@ -15,5 +15,5 @@ Suggests:
     testthat (>= 3.0.0)
 RoxygenNote: 7.3.2
 Config/testthat/edition: 3
-URL: https://cran.r-project.org/web/packages/SecretsProvider/index.html
+URL: https://cran.r-project.org/package=SecretsProvider
 BugReports: https://github.com/NaaVRE/SecretsProviderR/issues
